@@ -1,6 +1,6 @@
 # Client/Server Concept
 
-## Robust **Client/Server** communication concept.
+## Robust **Client/Server** communication concept with Global ModData.
 
 *When using this concept, you can use a text editor and replace all instances of "MyModName" with the mod name you want. Also rename the directories accordingly.*
 
