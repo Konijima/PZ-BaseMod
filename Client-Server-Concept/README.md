@@ -13,7 +13,7 @@
 
 ---
 
-## Directory Structure
+## **Directory Structure**
 Your `lua` directory can contain 3 subdirectories, each of them is optional depending your needs.
 > - **client** | lua script loaded on client only.
 > - **server** | lua script loaded on server only.
@@ -24,7 +24,7 @@ Inside each of these directories, we have a directory named after your mod name 
 
 ---
 
-## Reload Scripts
+## **Reload Scripts**
 
 ### Reloading **client** & **shared** script on the client
 
@@ -36,5 +36,15 @@ Inside each of these directories, we have a directory named after your mod name 
 > > reloadlua server/MyModName/MyScript.lua
 >
 > > reloadlua shared/MyModName/MyScript.lua
+
+---
+
+## **isClient()** and **isServer()**
+
+> In **Singleplayer** `isClient()` and `isServer()` both return `false`.
+
+> In **Multiplayer** `isClient()` return `true` on the game client.
+>
+> In **Multiplayer** `isServer()` return `true` on the game server.
 
 ---
