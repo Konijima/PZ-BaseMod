@@ -39,12 +39,12 @@ Inside each of these directories, we have a directory named after your mod name 
 
 ---
 
-## **isClient()** and **isServer()**
+## **isClient()** & **isServer()** methods
 
 > In **Singleplayer** `isClient()` and `isServer()` both return `false`.
 
-> In **Multiplayer** `isClient()` return `true` on the game client.
+> In **Multiplayer** `isClient()` return `true` on the game client only.
 >
-> In **Multiplayer** `isServer()` return `true` on the game server.
+> In **Multiplayer** `isServer()` return `true` on the game server only.
 
 ---
