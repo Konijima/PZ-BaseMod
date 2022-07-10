@@ -1,4 +1,4 @@
-# Project-Zomboid-Code-Concepts
+# Project Zomboid Code Concepts
 
 This repository contains **example & template** code for modders.
 
