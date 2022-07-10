@@ -1,4 +1,8 @@
+--- Ensure that the mod config is loaded
 require "MyModName/Config";
+
+--- Ensure that the mod utils is loaded
+require "MyModName/Utils";
 
 --- This is the main client entry file
 --- Create our global client object
