@@ -1,0 +1,3 @@
+# shared/MyModName/Classes/
+
+
