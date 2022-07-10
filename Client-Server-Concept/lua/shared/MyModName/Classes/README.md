@@ -1,3 +1,3 @@
-# shared/MyModName/Classes/
+# lua/shared/MyModName/Classes/
 
 

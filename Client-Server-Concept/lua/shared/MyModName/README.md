@@ -1,3 +1,3 @@
-# shared/MyModName/
+# lua/shared/MyModName/
 
 

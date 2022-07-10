@@ -1,3 +1,3 @@
-# client/MyModName/ClientModules/
+# lua/client/MyModName/ClientModules/
 
 

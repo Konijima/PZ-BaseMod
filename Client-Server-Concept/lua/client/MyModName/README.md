@@ -1,3 +1,3 @@
-# client/MyModName/
+# lua/client/MyModName/
 
 
