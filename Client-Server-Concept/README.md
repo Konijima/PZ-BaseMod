@@ -32,11 +32,12 @@ Inside each of these directories, we have a directory named after your mod name 
 
 ### Reloading **server** & **shared** script on the server
 
-> Enter this command in your sever console, you can also enter those command in the chat with `/reloadlua <filename>` if you are logged with an admin account.
+> Enter this command in your server console:
 > > reloadlua server/MyModName/MyScript.lua
 >
 > > reloadlua shared/MyModName/MyScript.lua
-
+>
+> You can also enter those commands in the chat with `/reloadlua <filename>` if you are logged with an admin account
 ---
 
 ## **isClient()** & **isServer()** methods
