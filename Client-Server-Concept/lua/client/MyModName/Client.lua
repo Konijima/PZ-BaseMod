@@ -1,7 +1,7 @@
---- Ensure that the mod config is loaded
+--- Load Config, will be available in any other client scripts.
 require "MyModName/Config";
 
---- Ensure that the mod utils is loaded
+--- Load Utils, will be available in any other client scripts.
 require "MyModName/Utils";
 
 --- This is the main client entry file
@@ -14,7 +14,7 @@ MyModName = {
 };
 
 --- Method to send data to server
-function MyModName.Methods.SendCommand(command, data)
+function MyModName.SendCommand(command, data)
     if not data then data = {}; end 
     if type(data) ~= "table" then error("Invalid 'data' parameter type, can only send 'nil' or 'table' to server."); end
 
