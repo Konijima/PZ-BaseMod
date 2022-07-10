@@ -4,11 +4,13 @@ require 'MyModName/Client';
 --- Handle initialization of Global ModData on client
 local function initGlobalModData(isNewGame)
 
-    --- ServerData: Data that must be up-to-date by the server
+    --- ServerData : Example Data that must be requested/received from the server
+    --- We delete it on the client (not singleplayer) and we request the latest from the server
     if isClient() and ModData.exists("ServerData") then ModData.remove("ServerData"); end
     MyModName.Data.ServerData = ModData.getOrCreate("ServerData");
+    ModData.request("ServerData");
 
-    --- ClientData: Data that is never sync or sent to the server
+    --- ClientData : Example Data that is local to this client only
     MyModName.Data.ClientData = ModData.getOrCreate("ClientData");
     
 end
