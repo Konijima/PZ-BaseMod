@@ -2,11 +2,11 @@
 
 ## Classes/
 
-> Classes directory will store all our lua classes that can be instanciated in both our client and server scripts.
+> `Classes/` directory will store all our lua classes that can be instanciated in both our client and server scripts.
 
 ## Libraries/
 
-> Libraries directory will store all the libraries (e.g: Json.lua) that can be used in both our client and server scripts.
+> `Libraries/` directory will store all the libraries (e.g: Json.lua) that can be used in both our client and server scripts.
 
 ## Config.lua
 
