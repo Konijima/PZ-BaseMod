@@ -10,7 +10,7 @@ local function initGlobalModData(isNewGame)
     MyModName.Data.ServerData = ModData.getOrCreate("ServerData");
     ModData.request("ServerData");
 
-    --- ClientData : Example Data that is local to this client only
+    --- ClientData : Example Data that is local to this client
     MyModName.Data.ClientData = ModData.getOrCreate("ClientData");
     
 end
