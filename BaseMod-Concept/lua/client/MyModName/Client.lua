@@ -47,5 +47,4 @@ local function receiveServerCommand(module, command, args)
 end
 Events.OnServerCommand.Add(receiveServerCommand);
 
-
 return ModClient;
