@@ -36,6 +36,13 @@ function ModServer.SendCommand(command, data, _player)
     end
 end
 
+---Transmit GlobalModData table to all clients
+---@param modDataName string
+function ModServer.TransmitModData(modDataName)
+    local name = ModServer.Config.ModName .. "." .. modDataName;
+    ModData.transmit(name);
+end
+
 --- Handle received client commands
 local function receiveServerCommand(module, command, player, args)
     if module ~= ModServer.Config.ModName then return; end
