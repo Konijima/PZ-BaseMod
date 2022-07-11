@@ -179,22 +179,6 @@ ClientModData = {
 
 <br>
 
-## Easily access your mod Global ModData
-
-All loaded Global ModData will be accessible into the **Client.Data** & **Server.Data** object.
-
-```lua
-Client.Data.LocalPlayer.TotalItemBought = 5;
-
-local baseballBatPrice = Client.Data.PriceList.BaseballBat
-```
-```lua
-local baseballBatPrice = Server.Data.PriceList.BaseballBat
-```
->*Never set the table itself, eg: `Client.Data.LocalPlayer = {}` or it will not point to the ModData reference anymore.*
-
-<br>
-
 ## Access Global ModData after it's initialized
 
 The custom event `OnModDataInitialized` is an internal event you do not need to add it to your config. It is triggered after the GlobalModData is initialized.
@@ -204,7 +188,7 @@ The custom event `OnModDataInitialized` is an internal event you do not need to 
 local function onModDataInitialized()
     Client.Log( Client.Data.LocalPlayer ) --- Table is ready
 
-    Client.Log( Client.Data.PriceList )       --- Is ready but not received yet
+    Client.Log( Client.Data.PriceList )   --- Is ready but not received yet
 end
 Client.AddEvent("OnModDataInitialized", onModDataInitialized);
 ```
@@ -217,6 +201,8 @@ local function onModDataInitialized()
 end
 Server.AddEvent("OnModDataInitialized", onModDataInitialized);
 ```
+
+>*Never set the table itself, eg: `Client.Data.LocalPlayer = {}` or it will not point to the ModData reference anymore.*
 
 <br>
 
