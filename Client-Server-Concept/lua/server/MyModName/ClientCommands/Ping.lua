@@ -1,7 +1,10 @@
 --- Load Server
 local Server = require 'MyModName/Server';
 
-function Server.Commands.Ping(player)
+---Handle receiving Ping command from a client
+---@param player IsoPlayer
+---@param args table
+function Server.Commands.Ping(player, args)
     Server.Log("Received Ping from " .. player:getUsername() .. "!");
 
     Server.Modules.Test.SendPong(player);
