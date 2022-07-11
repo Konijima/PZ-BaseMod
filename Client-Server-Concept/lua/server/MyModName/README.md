@@ -18,8 +18,8 @@
 
 ## ServerEvents.lua
 
-> Adds the Server Events defined into the config file.
+> Prepare our mod custom events on the server, defined in our Config.
 
 ## ServerModData.lua
 
-> Create and prepare the various Global ModData used by our mod. **(server-side)**
+> Load/Create the Global ModData on the server, defined in our Config.
