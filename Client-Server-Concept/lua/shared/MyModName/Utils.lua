@@ -3,6 +3,18 @@ local json = require("MyModName/Libraries/Json");
 ---@class Utils
 local Utils = {};
 
+---Check if running in singleplayer
+---@return boolean
+function Utils.IsSinglePlayer()
+    return not isClient() and not isServer();
+end
+
+---Check if client is admin or debug
+---@return boolean
+function Utils.IsClientAdminOrDebug()
+    return not isServer() and (isAdmin() or isDebugEnabled());
+end
+
 ---Get a player object from a username
 ---@param username string
 ---@return IsoPlayer
