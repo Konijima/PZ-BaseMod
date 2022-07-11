@@ -8,30 +8,30 @@
 
 ---------------------------------------------------------------------------------
 
---- Rename MyModName with your own mod name
-local recipeCode = MyModName_RecipeCodes or {};
-recipeCode.GetItemTypes = recipeCode.GetItemTypes or {};
-recipeCode.OnCanPerform = recipeCode.OnCanPerform or {};
-recipeCode.OnCreate = recipeCode.OnCreate or {};
-recipeCode.OnGiveXP = recipeCode.OnGiveXP or {};
-recipeCode.OnTest = recipeCode.OnTest or {};
-MyModName_RecipeCodes = recipeCode;
+--- Preparing the tables
+local t = MyModName_RecipeCodes or {};
+t.GetItemTypes = t.GetItemTypes or {};
+t.OnCanPerform = t.OnCanPerform or {};
+t.OnCreate = t.OnCreate or {};
+t.OnGiveXP = t.OnGiveXP or {};
+t.OnTest = t.OnTest or {};
+MyModName_RecipeCodes = t;
 
 ---------------------------------------------------------------------------------
 
 --- Define your recipe functions here
 
 --- Example:
-
-function RecipeCode.OnCreate.MakeBaseballBat(items, result, playerObj)
+function MyModName_RecipeCodes.OnCreate.MakeBaseballBat(items, result, playerObj)
     playerObj:getInventory():AddItem(result:getFullType()); --- add one more
 end
 
 --[[ Usage in recipe txt script:
 
-recipe Make Baseball Bat {
-    ...
-    OnCreate:MyModName_RecipeCodes.OnCreate.MakeBaseballBat
-    ...
-}
+    recipe Make Baseball Bat {
+        ...
+        OnCreate:MyModName_RecipeCodes.OnCreate.MakeBaseballBat
+        ...
+    }
+    
 ]]
