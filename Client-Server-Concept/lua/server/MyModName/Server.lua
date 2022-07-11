@@ -8,6 +8,7 @@ local Utils = require "MyModName/Utils";
 --- Create our global server object
 --- Optional, set as global so that other mods can access it and make modifications
 Server = {
+local Server = {
     Config = Config,
     Utils = Utils,
     Data = {},      -- Global ModData will be stored in this
