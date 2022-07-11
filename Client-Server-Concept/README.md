@@ -11,7 +11,9 @@
 > - How to manage load order of your scripts.
 > - How to make your mod work in **Singleplayer**, **Host** & **Dedicated** server without extra work.
 
+  
 ---
+
 
 ## **Directory Structure**
 Your `lua` directory can contain 3 subdirectories, each of them is optional depending your needs.
@@ -21,9 +23,11 @@ Your `lua` directory can contain 3 subdirectories, each of them is optional depe
 
 Inside each of these directories, we have a directory named after your mod name in which we have all scripts for the mod.  
 >*This will prevent script conflict/overwritting with other mods and make it easier to reload script using command or debug interface (F11).*
-
+  
+  
 ---
-
+  
+  
 ## **Reload Scripts**
 
 ### Reloading **client** & **shared** script on the client
@@ -38,7 +42,10 @@ Inside each of these directories, we have a directory named after your mod name 
 > > reloadlua shared/MyModName/MyScript.lua
 >
 > You can also enter those commands in the chat with `/reloadlua <filename>` if you are logged with an admin account
+
+  
 ---
+
 
 ## **isClient()** & **isServer()** methods
 
@@ -48,4 +55,7 @@ Inside each of these directories, we have a directory named after your mod name 
 >
 > In **Multiplayer** `isServer()` return `true` on the game server only.
 
+  
 ---
+  
+  
