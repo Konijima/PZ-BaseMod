@@ -74,7 +74,7 @@ Client Command Handlers are inside `server/MyModName/ClientCommands/`.
 
 >Check template commands **Ping** & **Pong** to see how it works. 
 
----
+<br>
 
 # Modules
 
@@ -84,7 +84,7 @@ This is where the main logic of your mod will be defined.
 >I call theses `Module` because you can structure your mod into different parts and access each part from within an other.
 Check the template module named `Test` to see how it's defined.
 
----
+<br>
 
 # Custom Events
 
@@ -127,6 +127,8 @@ Client.TriggerEvent("OnMyCustomClientEvent", "param1", "param2");
 ```lua
 Server.TriggerEvent("OnMyCustomServerEvent", "param1", "param2", "param3");
 ```
+
+<br>
 
 # Global ModData
 
