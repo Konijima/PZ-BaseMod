@@ -20,6 +20,10 @@
 
 > Client **entry** script for our mod. 
 
+## ClientEvents.lua
+
+> Adds the Client Events defined into the config file.
+
 ## ServerModData.lua
 
 > Create and prepare the various Global ModData used by our mod. **(client-side)**
