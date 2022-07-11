@@ -132,7 +132,7 @@ Server.TriggerEvent("OnMyCustomServerEvent", "param1", "param2", "param3");
 
 # Global ModData
 
-...
+Info coming soon
 
 <br>
 
@@ -149,11 +149,13 @@ Press F11 and search for your mod name, you will get a list of all your mod file
 ### Reloading **server** & **shared** script on the server
 
 Enter this command in your server console:
+```
 reloadlua server/MyModName/MyScript.lua
->
+```
+```
 reloadlua shared/MyModName/MyScript.lua
->
-You can also enter those commands in the chat with `/reloadlua <filename>` if you are logged with an admin account
+```
+>You can also enter those commands in the chat with `/reloadlua <filename>` if you are logged with an admin account
 
 <br>
 
@@ -163,10 +165,8 @@ You can also enter those commands in the chat with `/reloadlua <filename>` if yo
 
 # Notes
 
-## **isClient()** & **isServer()** methods
-
 >In **Singleplayer** `isClient()` and `isServer()` both return `false`.
->
+
 >In **Multiplayer** `isClient()` return `true` on the game client only.
->
+
 >In **Multiplayer** `isServer()` return `true` on the game server only.
