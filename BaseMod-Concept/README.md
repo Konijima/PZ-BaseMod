@@ -103,7 +103,7 @@ ServerEvents = {
 
 ## AddEvent
 
-You can listen to a Custom Event and execute a callback everytime it's triggered.
+Add a callback to a custom event so that it is executed when triggered.
 
 ```lua
 local function myCustomEventCallback(arg1 ,arg2, ...)
@@ -120,7 +120,8 @@ Server.AddEvent("OnMyCustomServerEvent", myCustomEventCallback);
 
 ## RemoveEvent
 
-You can remove a callback so that it stop executing when then event triggers again.
+Remove a callback from a custom event so that it is not longer executed when triggered.
+
 ```lua
 Client.RemoveEvent("OnMyCustomClientEvent", myCustomEventCallback);
 ```
@@ -130,13 +131,16 @@ Server.RemoveEvent("OnMyCustomServerEvent", myCustomEventCallback);
 
 ## TriggerEvent
 
-You can trigger and pass any parameter to your custom events when you need it.
+Trigger a custom event and pass any parameters that you need.
+
 ```lua
 Client.TriggerEvent("OnMyCustomClientEvent", "param1", "param2");
 ```
 ```lua
 Server.TriggerEvent("OnMyCustomServerEvent", "param1", "param2", "param3");
 ```
+
+> The game engine limits us to a maximum of 8 parameters.
 
 <br>
 
