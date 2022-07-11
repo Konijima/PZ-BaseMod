@@ -1,14 +1,17 @@
 # BaseMod Concept
 
-*When using this concept, you can use a text editor and replace all instances of `MyModName` with the mod name you want. Also rename the directories accordingly.*
+BaseMod Concept can be used as an example or template to structure a Project Zomboid LUA mod. It show how to use the famous `require` function to define load order of your scripts.
+
+>*Use a text editor like VSCode to find and replace all instances of `MyModName` with the mod name you want. Also rename the directories accordingly.*
 
 <br>
 
 ## What does it do?
->- Define Global ModData from a config file.
->- Define Custom Events from a config file.
->- Send commands between client and server.
->- Structure project using `Modules`.
+- Offer a base to quick start a new project.
+- You define Global ModData from your config file.
+- It handles receiving of the Global ModData for you.
+- You define Custom Events from your config file.
+- Offer a clean & easy way to structure your project.
 
 <br>
 
@@ -34,9 +37,9 @@ Inside each of these directories, we have a directory with the same name as the 
 # Getting Started
 
 Edit the mod config file at `lua/shared/MyModName/Config.lua`
-1) Change `ModName = "MyModName"`.
-2) Change the `ModInfo` to fit your own info.
-3) Change `ClientModData` and `ServerModData` to suit your mod needs.
+1) Change the `ModName`.
+2) Change the `ModInfo` with your own.
+3) Define the Global ModData needed for your mod.
 4) Add custom events into the `ClientEvents` and `ServerEvents` tables.
 >*You can add any custom config **key:value** to the config object to access it into your mod.*
 
@@ -44,7 +47,7 @@ Edit the mod config file at `lua/shared/MyModName/Config.lua`
 
 # Commands
 
-Communication between the client and server are done using commands.
+Communication between the client & server is done using commands.
 
 ## Sending Commands
 
@@ -67,10 +70,6 @@ Server.SendCommand("MyCommand", {})
 
 To make it easier to reload a specific command, each command handler is defined into its own file.
 
-**Server command handlers** are inside `client/MyModName/ServerCommands/`.  
-
-**Client command handlers** are inside `server/MyModName/ClientCommands/`.
-
 >*Check template commands **Ping** & **Pong** to see how it works.* 
 
 <br>
@@ -80,15 +79,16 @@ To make it easier to reload a specific command, each command handler is defined 
 **A module is a table of functions that can be used inside command handlers and other modules.**
 
 This is where the main logic of your mod will be defined.
->I call theses `Module` because you can structure your mod into different parts and access each part from within an other.  
->Check the template module named `Test` to see how it's defined.
+>*I call theses `Module` because you can structure your mod into different parts and access each part from within an other.*  
+
+>*Check the template module named `Test` to see how it's defined.*
+
 
 <br>
 
 # Custom Events
 
-Define your mod client & server Custom Events in your config file.  
->Both **Client** & **Server** object have the methods `AddEvent, RemoveEvent, TriggerEvent`.
+Define your mod client & server Custom Events in your config file.
 
 ## AddEvent
 
@@ -154,18 +154,4 @@ reloadlua server/MyModName/MyScript.lua
 ```
 reloadlua shared/MyModName/MyScript.lua
 ```
->You can also enter those commands in the chat using `/reloadlua <filename>`, must be logged in with an admin account.
-
-<br>
-
----
-
-<br>
-
-# Notes
-
->In **Singleplayer** `isClient()` and `isServer()` both return `false`.
-
->In **Multiplayer** `isClient()` return `true` on the game client only.
-
->In **Multiplayer** `isServer()` return `true` on the game server only.
+>*You can also enter those commands in the chat using `/reloadlua <filename>`, must be logged in with an admin account.*
