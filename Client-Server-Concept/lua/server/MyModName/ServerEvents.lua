@@ -9,6 +9,7 @@ for _, eventName in ipairs(Server.Config.ServerEvents) do
     if not addedEvents:contains(eventName) then
         LuaEventManager.AddEvent(Server.Config.ModName .. "Server" .. eventName);
         addedEvents:add(eventName);
+        Server.Log("Created custom server event " .. eventName);
     end
 end
 
