@@ -106,13 +106,13 @@ ServerEvents = {
 Add a callback to a custom event so that it is executed when triggered.
 
 ```lua
-local function myCustomEventCallback(arg1 ,arg2, ...)
+local function myCustomEventCallback(arg1, ...)
     Client.Log("My custom client event has been triggered!");
 end
 Client.AddEvent("OnMyCustomClientEvent", myCustomEventCallback);
 ```
 ```lua
-local function myCustomEventCallback(arg1 ,arg2, ...)
+local function myCustomEventCallback(arg1, arg2, arg3)
     Server.Log("My custom server event has been triggered!");
 end
 Server.AddEvent("OnMyCustomServerEvent", myCustomEventCallback);
@@ -134,10 +134,10 @@ Server.RemoveEvent("OnMyCustomServerEvent", myCustomEventCallback);
 Trigger a custom event and pass any parameters that you need.
 
 ```lua
-Client.TriggerEvent("OnMyCustomClientEvent", "param1", "param2");
+Client.TriggerEvent("OnMyCustomClientEvent", "param1", "param2", "param3");
 ```
 ```lua
-Server.TriggerEvent("OnMyCustomServerEvent", "param1", "param2", "param3");
+Server.TriggerEvent("OnMyCustomServerEvent", "param1", "param2", "param3", "param4", "param5", "param6", "param7", "param8");
 ```
 
 > The game engine limits us to a maximum of 8 parameters.
