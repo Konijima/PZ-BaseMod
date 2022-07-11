@@ -84,7 +84,6 @@ This is where the main logic of your mod will be defined.
 
 >*Check the template module named `Test` to see how it's defined.*
 
-
 <br>
 
 # Custom Events
@@ -100,6 +99,8 @@ ServerEvents = {
 },
 ```
 >*All custom events are automatically prefixed with your ModName so there is no conflict between mods.*
+
+<br>
 
 ## AddEvent
 
@@ -118,6 +119,8 @@ end
 Server.AddEvent("OnMyCustomServerEvent", myCustomEventCallback);
 ```
 
+<br>
+
 ## RemoveEvent
 
 Remove a callback from a custom event so that it is not longer executed when triggered.
@@ -128,6 +131,8 @@ Client.RemoveEvent("OnMyCustomClientEvent", myCustomEventCallback);
 ```lua
 Server.RemoveEvent("OnMyCustomServerEvent", myCustomEventCallback);
 ```
+
+<br>
 
 ## TriggerEvent
 
