@@ -8,6 +8,10 @@
 
 > `ServerModules/` directory will store all the server modules.
 
+## RecipeCodes.lua
+
+> Add all the recipe lua codes needed for our recipes.
+
 ## Server.lua
 
 > Server **entry** script for our mod. 
