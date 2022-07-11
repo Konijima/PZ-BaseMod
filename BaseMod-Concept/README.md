@@ -67,6 +67,8 @@ Send a command from the **server** to **all clients**
 Server.SendCommand("MyCommand", {})
 ```
 
+<br>
+
 ## Receiving Commands
 
 To make it easier to reload a specific command, each command handler is defined into its own file.
