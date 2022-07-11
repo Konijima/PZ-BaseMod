@@ -13,6 +13,12 @@ local Server = {
     Commands = {},  -- Client command handlers will be stored in this
 };
 
+---Log data prefixed with the mod name
+---@param str string
+function Server.Log(str)
+    print(Server.Config.ModName .. ": " .. tostring(str));
+end
+
 ---Send data to one or all clients
 ---@param command string
 ---@param data table
