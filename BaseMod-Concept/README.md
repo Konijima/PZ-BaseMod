@@ -177,6 +177,8 @@ ClientModData = {
 
 >*To have a client and server Global ModData table synchronized it must have the exact same name.*
 
+<br>
+
 ## Easily access your mod Global ModData
 
 All loaded Global ModData will be accessible into the **Client.Data** & **Server.Data** object.
@@ -190,6 +192,8 @@ local baseballBatPrice = Client.Data.PriceList.BaseballBat
 local baseballBatPrice = Server.Data.PriceList.BaseballBat
 ```
 >*Never set the table itself, eg: `Client.Data.LocalPlayer = {}` or it will not point to the ModData reference anymore.*
+
+<br>
 
 ## Access Global ModData after it's initialized
 
