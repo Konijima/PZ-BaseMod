@@ -89,7 +89,17 @@ This is where the main logic of your mod will be defined.
 
 # Custom Events
 
-Define your mod client & server Custom Events in your config file.
+Add any custom event name you need into your config file.
+```lua
+ClientEvents = {
+    "MyCustomClientEvent",
+},
+
+ServerEvents = {
+    "MyCustomServerEvent",
+},
+```
+>*All custom events are automatically prefixed with your ModName so there is no conflict between mods.*
 
 ## AddEvent
 
