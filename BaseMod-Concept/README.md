@@ -224,6 +224,65 @@ Server.AddEvent("OnModDataInitialized", onModDataInitialized);
 
 <br>
 
+# Client Object
+
+To access the client object you must require it in your file.
+```lua
+local Client = require 'MyModName/Client';
+```
+
+## Properties
+```lua
+Client.Config                           -- Contains your config
+Client.Utils                            -- Contains your utility functions
+Client.Data                             -- Contains your GlobalModData tables
+Client.Modules                          -- Contains your modules
+Client.Commands                         -- Contains your server command handlers
+Client.TimedActions                     -- Contains your timed actions
+Client.UI                               -- Contains your UIs
+```
+## Methods
+```lua
+Client.Log(str)                         -- Log a message with your mod name as prefix
+Client.SendCommand(command, data)       -- Send a command with data to the server 
+Client.AddEvent(eventName, callback)    -- Add a callback to a custom event
+Client.RemoveEvent(eventName, callback) -- Remove a callback from a custom event
+Client.TriggerEvent(eventName, ...)     -- Trigger a custom event with up to 8 parameters
+```
+
+<br>
+
+# Server Object
+
+To access the server object you must require it in your file.
+```lua
+local Server = require 'MyModName/Server';
+```
+
+## Properties
+```lua
+Server.Config                           -- Contains your shared config
+Server.Utils                            -- Contains your shared utility functions
+Server.Data                             -- Contains your server GlobalModData tables
+Server.Modules                          -- Contains your server modules
+Server.Commands                         -- Contains your client command handlers
+```
+## Methods
+```lua
+Server.Log(str)                             -- Log a message with your mod name as prefix
+Server.SendCommand(command, data, player)   -- Send a command with data to client(s)
+Server.AddEvent(eventName, callback)        -- Add a callback to a custom event
+Server.RemoveEvent(eventName, callback)     -- Remove a callback from a custom event
+Server.TriggerEvent(eventName, ...)         -- Trigger a custom event with up to 8 parameters
+Server.TransmitModData(modDataName)         -- Transmit a GlobalModData table to all clients
+```
+
+<br>
+
+---
+
+<br>
+
 # Reload Scripts
 
 ### Reloading **client** & **shared** script on the client
