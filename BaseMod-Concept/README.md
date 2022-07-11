@@ -20,12 +20,13 @@ BaseMod Concept can be used as an example or template to structure a Project Zom
 <br>
 
 # **Directory Structure**
-The `lua` directory contain 3 subdirectories, each of them is optional dependently of your needs.
+The `lua` directory contain 3 subdirectories.
 - **client** | lua script loaded on client only.
 - **server** | lua script loaded on server only.
 - **shared** | lua script loaded on both client & server.
 
-Inside each of these directories, we have a directory with the same name as the mod.  
+Inside each of these 3 directories, we have a directory with the same name as the mod.
+
 >*This will prevent script conflict/overwritting with other mods and make it easier to reload script using command or debug interface (F11).*
 
 <br>
