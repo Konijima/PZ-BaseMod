@@ -1,8 +1,10 @@
 --- Load Server
 local Server = require 'MyModName/Server';
 
+--- Added events will be stored in this ArrayList
 local addedEvents = ArrayList.new();
 
+--- Add the config server events
 for _, eventName in ipairs(Server.Config.ServerEvents) do
     if not addedEvents:contains(eventName) then
         LuaEventManager.AddEvent(Server.Config.ModName .. "Server" .. eventName);
@@ -10,6 +12,7 @@ for _, eventName in ipairs(Server.Config.ServerEvents) do
     end
 end
 
+---Add an event callback
 ---@param eventName string
 ---@param callback function
 function Server.AddEvent(eventName, callback)
@@ -18,6 +21,7 @@ function Server.AddEvent(eventName, callback)
     end
 end
 
+---Remove an event callback
 ---@param eventName string
 ---@param callback function
 function Server.RemoveEvent(eventName, callback)
@@ -26,6 +30,7 @@ function Server.RemoveEvent(eventName, callback)
     end
 end
 
+---Trigger an event
 ---@param eventName string
 ---@vararg arguments
 function Server.TriggerEvent(eventName, ...)
