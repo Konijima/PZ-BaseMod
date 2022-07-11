@@ -5,10 +5,10 @@
 <br>
 
 ## What does it do?
-- Define Global ModData from a config file.
-- Define Custom Events from a config file.
-- Send commands between client and server.
-- Structure project using `Modules`.
+>- Define Global ModData from a config file.
+>- Define Custom Events from a config file.
+>- Send commands between client and server.
+>- Structure project using `Modules`.
 
 <br>
 
@@ -38,39 +38,38 @@ Edit the mod config file at `lua/shared/MyModName/Config.lua`
 2) Change the `ModInfo` to fit your own info.
 3) Change `ClientModData` and `ServerModData` to suit your mod needs.
 4) Add custom events into the `ClientEvents` and `ServerEvents` tables.
-You can add any custom config **key:value** to the config object to access it into your mod.
+>You can add any custom config **key:value** to the config object to access it into your mod.
 
 <br>
 
 # Commands
 
-Network communication between the client and server are done using commands.
+Communication between the client and server are done using commands.
 
 ## Sending Commands
 
-Both **Client** & **Server** object have a method `SendCommand`.
-
-### To send a command from a client to the server:
+Send a command from a **client** to the **server**
 ```lua
 Client.SendCommand("MyCommand", {})
 ```
 
-### To send a command from the server to a client:
+Send a command from the **server** to a **client**
 ```lua
 Server.SendCommand("MyCommand", {}, targetPlayer)
 ```
 
-### To send a command from the server to all clients:
+Send a command from the **server** to **all clients**
 ```lua
 Server.SendCommand("MyCommand", {})
 ```
 
 ## Receiving Commands
 
-Command handlers are functions defined into its own file. *This make it easier to reload a specific command for debugging.*
+Command handlers are functions defined into its own file. 
+>This make it easier to reload a specific command for debugging.
 
-Server Command Handlers are inside `client/MyModName/ServerCommands/`.  
-Client Command Handlers are inside `server/MyModName/ClientCommands/`.
+Server command handlers are inside `client/MyModName/ServerCommands/`.  
+Client command handlers are inside `server/MyModName/ClientCommands/`.
 
 >Check template commands **Ping** & **Pong** to see how it works. 
 
@@ -155,7 +154,7 @@ reloadlua server/MyModName/MyScript.lua
 ```
 reloadlua shared/MyModName/MyScript.lua
 ```
->You can also enter those commands in the chat with `/reloadlua <filename>` if you are logged with an admin account
+>You can also enter those commands in the chat using `/reloadlua <filename>`, must be logged in with an admin account.
 
 <br>
 
