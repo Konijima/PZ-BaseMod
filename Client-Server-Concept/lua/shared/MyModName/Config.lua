@@ -6,12 +6,21 @@ local Config = {
 
     --- Define which custom event to add in the client
     ClientEvents = {
+        "OnModDataInitialized",
 
+        "OnNewPlayerCreated",
+        "OnPlayerSpawned",
+        "OnPlayerDied",
     },
 
     --- Define which custom event to add in the server
     ServerEvents = {
-        
+        "OnModDataInitialized",
+
+        "OnNewPlayerConnected",
+        "OnPlayerConnected",
+        "OnPlayerDied",
+        "OnPlayerDisconnected",
     },
 
 };
