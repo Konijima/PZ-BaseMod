@@ -5,7 +5,8 @@ local Config = {
     ModVersion = "1.0.0",
 
     --- Define Global ModData tables to create on the client
-    --- set to true if it should request the latest version from the server
+    --- if true, it will always be requested/overwritten by the server
+    --- if false, it will only be local
     ClientModData = {
         WorldData = true, -- request from server
         PlayerData = false, -- local only
