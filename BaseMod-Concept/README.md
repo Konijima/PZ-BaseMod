@@ -201,7 +201,11 @@ end
 Server.AddEvent("OnModDataInitialized", onModDataInitialized);
 ```
 
->*Never set the table itself, eg: `Client.Data.LocalPlayer = {}` or it will not point to the ModData reference anymore.*
+>*Never set the GlobalModData table directly, eg: `Client.Data.LocalPlayer = {}` or it will not point to the ModData reference anymore.*
+
+>*GlobalModData tables can be `array table` and or `key:value table` only.*
+
+>*It is not recommended to save instance object into ModData, it cannot load it back properly.* 
 
 <br>
 
