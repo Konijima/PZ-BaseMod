@@ -4,10 +4,7 @@ local Config = require "MyModName/Config";
 --- Load Utils
 local Utils = require "MyModName/Utils";
 
---- This is the main server entry file
---- Create our global server object
---- Optional, set as global so that other mods can access it and make modifications
-Server = {
+---@class Server
 local Server = {
     Config = Config,
     Utils = Utils,
@@ -16,18 +13,20 @@ local Server = {
     Commands = {},  -- Client command handlers will be stored in this
 };
 
---- Method to send data to client
---- 'player' parameter is optional, if 'nil' it will send to all connected clients
-function Server.SendCommand(command, data, player)
+---Send data to one or all clients
+---@param command string
+---@param data table
+---@param _player IsoPlayer
+function Server.SendCommand(command, data, _player)
     if not data then data = {}; end 
     if type(data) ~= "table" then error("Invalid 'data' parameter type, can only send 'nil' or 'table' to client(s)."); end
 
-    if instanceof(player, "IsoPlayer") then
-        sendServerCommand(player, Server.Config.ModName, command, data);
-    elseif player == nil then
+    if instanceof(_player, "IsoPlayer") then
+        sendServerCommand(_player, Server.Config.ModName, command, data);
+    elseif _player == nil then
         sendServerCommand(Server.Config.ModName, command, data);
     else
-        error("Invalid 'player' parameter type.")
+        error("Invalid '_player' parameter type.")
     end
 end
 

@@ -4,9 +4,7 @@ local Config = require "MyModName/Config";
 --- Load Utils
 local Utils = require "MyModName/Utils";
 
---- This is the main client entry file
---- Create our global client object
---- Optional, set as global so that other mods can access it and make modifications
+---@class Client
 local Client = {
     Config = Config,
     Utils = Utils,
@@ -15,7 +13,9 @@ local Client = {
     Commands = {},  -- Server command handlers will be stored in this
 };
 
---- Method to send data to server
+---Send data to the server
+---@param command string
+---@param data table
 function Client.SendCommand(command, data)
     if not data then data = {}; end 
     if type(data) ~= "table" then error("Invalid 'data' parameter type, can only send 'nil' or 'table' to server."); end
