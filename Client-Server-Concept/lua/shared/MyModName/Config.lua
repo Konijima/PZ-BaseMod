@@ -4,23 +4,20 @@ local Config = {
     ModName = "MyModName",
     ModVersion = "1.0.0",
 
-    --- Define which custom event to add in the client
+    --- Define custom events to add on the client
     ClientEvents = {
-        "OnModDataInitialized",
-
-        "OnNewPlayerCreated",
-        "OnPlayerSpawned",
-        "OnPlayerDied",
+        "OnModDataInitialized",     -- [ isNewGame:boolean ]
+        "OnNewPlayerCreated",       -- [ player:IsoPlayer ]
+        "OnPlayerSpawned",          -- [ player:IsoPlayer ]
+        "OnPlayerDied",             -- [ player:IsoPlayer ]
     },
 
-    --- Define which custom event to add in the server
+    --- Define custom events to add on the server
     ServerEvents = {
-        "OnModDataInitialized",
-
-        "OnNewPlayerConnected",
-        "OnPlayerConnected",
-        "OnPlayerDied",
-        "OnPlayerDisconnected",
+        "OnModDataInitialized",     -- [ isNewGame:boolean ]
+        "OnPlayerConnected",        -- [ player:IsoPlayer ]
+        "OnPlayerDied",             -- [ player:IsoPlayer ]
+        "OnPlayerDisconnected",     -- [ player:IsoPlayer ]
     },
 
 };
