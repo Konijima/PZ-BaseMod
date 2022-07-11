@@ -1,12 +1,18 @@
 -- Ensure server is loaded first
 local Server = require 'MyModName/Server';
 
+---Initialize Global ModData that we need on the server
+---@param modDataName string
+local function initModDataTable(modDataName)
+    if Server.Data[modDataName] then return; end -- prevent multiple initialization
+    Server.Data[modDataName] = ModData.getOrCreate(modDataName);
+end
+
 --- Handle initialization of Global ModData on server
 local function initGlobalModData(isNewGame)
 
-    --- ServerData: Data that is stored on server and is persistant
-    --- Will be requested by client on connection.
-    Server.Data.ServerData = ModData.getOrCreate("ServerData");
+    initModDataTable("WorldData");
+    initModDataTable("PlayerData");
 
 end
 Events.OnInitGlobalModData.Add(initGlobalModData);
