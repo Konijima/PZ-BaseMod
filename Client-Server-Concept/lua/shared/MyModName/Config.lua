@@ -6,18 +6,32 @@ local Config = {
 
     --- Define custom events to add on the client
     ClientEvents = {
+        --- triggered when the mod Global ModData is done initializing
         "OnModDataInitialized",     -- [ isNewGame:boolean ]
-        "OnNewPlayerCreated",       -- [ player:IsoPlayer ]
-        "OnPlayerSpawned",          -- [ player:IsoPlayer ]
+
+        --- 
+        "OnPlayerSpawned",          -- [ player:IsoPlayer, isNewCharacter:boolean ]
+
+        --- 
         "OnPlayerDied",             -- [ player:IsoPlayer ]
     },
 
     --- Define custom events to add on the server
     ServerEvents = {
+        --- triggered when the mod Global ModData is done initializing
         "OnModDataInitialized",     -- [ isNewGame:boolean ]
-        "OnPlayerConnected",        -- [ player:IsoPlayer ]
-        "OnPlayerDied",             -- [ player:IsoPlayer ]
+
+        --- 
+        "OnPlayerConnected",        -- [ player:IsoPlayer, isNewPlayer:boolean ]
+
+        --- 
         "OnPlayerDisconnected",     -- [ player:IsoPlayer ]
+
+        --- 
+        "OnPlayerSpawned",          -- [ player:IsoPlayer, isNewCharacter:boolean ]
+
+        --- 
+        "OnPlayerDied",             -- [ player:IsoPlayer ]
     },
 
 };
