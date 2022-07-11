@@ -20,8 +20,14 @@ end
 --- Handle initialization of Global ModData on client
 local function initGlobalModData(isNewGame)
 
-    initServerModDataTable("WorldData");
-    initLocalModDataTable("PlayerData");
+    for modDataName, isSync in pairs(Client.Config.ClientModData) do
+        local name = Client.Config.ModName .. "." .. modDataName;
+        if isSync then
+            initServerModDataTable(name);
+        else
+            initLocalModDataTable(name);
+        end
+    end
 
     Client.TriggerEvent("OnModDataInitialized", isNewGame);
     
@@ -29,7 +35,8 @@ end
 Events.OnInitGlobalModData.Add(initGlobalModData);
 
 --- Handle receiving of Global ModData on client
-local function receiveGlobalModData(name, data)
+local function receiveGlobalModData(modDataName, data)
+    local name = Client.Config.ModName .. "." .. modDataName;
     if Client.Data[name] and type(data) == "table" then
         if #data > 0 then
             -- if the received data is an array table

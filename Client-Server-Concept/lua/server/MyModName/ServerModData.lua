@@ -11,8 +11,10 @@ end
 --- Handle initialization of Global ModData on server
 local function initGlobalModData(isNewGame)
 
-    initModDataTable("WorldData");
-    initModDataTable("PlayerData");
+    for _, modDataName in ipairs(Server.Config.ServerModData) do
+        local name = Server.Config.ModName .. "." .. modDataName;
+        initModDataTable(name);
+    end
 
     Server.TriggerEvent("OnModDataInitialized", isNewGame);
 
