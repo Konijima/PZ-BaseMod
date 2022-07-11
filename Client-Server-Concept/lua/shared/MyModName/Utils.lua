@@ -15,6 +15,13 @@ function Utils.IsClientAdminOrDebug()
     return not isServer() and (isAdmin() or isDebugEnabled());
 end
 
+---Check if a mod is active
+---@param modName string
+---@return boolean
+function Utils.IsModActive(modName)
+    return getActivatedMods():contains(modName);
+end
+
 ---Get a player object from a username
 ---@param username string
 ---@return IsoPlayer
