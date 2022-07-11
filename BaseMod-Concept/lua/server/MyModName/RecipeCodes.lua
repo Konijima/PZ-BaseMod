@@ -21,4 +21,6 @@ MyModName_RecipeCodes = {
 
 --- Define your recipe functions here
 
-
+function MyModName_RecipeCodes.OnCreate.GiveExtraItem(items, result, playerObj)
+    playerObj:getInventory():AddItem(result:getFullType());
+end
