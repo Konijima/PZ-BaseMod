@@ -22,8 +22,8 @@
 
 ## ClientEvents.lua
 
-> Adds the Client Events defined into the config file.
+> Prepare our mod custom events on the client, defined in our Config.
 
 ## ServerModData.lua
 
-> Create and prepare the various Global ModData used by our mod. **(client-side)**
+> Load/Create/Request the Global ModData on the client, defined in our Config.
