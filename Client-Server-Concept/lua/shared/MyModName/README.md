@@ -3,7 +3,8 @@
 ## Classes/
 
 > `Classes/` directory will store all our lua classes that can be instanciated in both our client and server scripts.
-> Usually derives from `ISBaseObject` class.
+>
+> > Usually derives from `ISBaseObject` class.
 
 ## Libraries/
 
