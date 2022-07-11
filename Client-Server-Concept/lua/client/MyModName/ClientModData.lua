@@ -1,4 +1,4 @@
--- Ensure client is loaded first
+--- Load Client
 local Client = require 'MyModName/Client';
 
 ---Initialize Server Global ModData that we need to sync with the server
