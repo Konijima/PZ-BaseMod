@@ -57,8 +57,12 @@ Network communication between the client and server are done using commands.
 
 > ## Receiving Commands
 > 
-> Command handlers are functions defined into their own file in a `Commands` directory. This make it easier to reload a specific command for debugging.
-> > Check the template commands `Ping & Pong` to see how it works. 
+> Command handlers are functions defined into its own file. *This make it easier to reload a specific command for debugging.*
+>
+> Server Command Handlers are inside `client/MyModName/ServerCommands/`.  
+> Client Command Handlers are inside `server/MyModName/ClientCommands/`.
+
+> Check template commands **Ping** & **Pong** to see how it works. 
 
 ---
 
@@ -68,7 +72,7 @@ Network communication between the client and server are done using commands.
 > 
 > This is where the main logic of your mod will be defined.
 > I call theses `Module` because you can structure your mod into different parts and access each part from within an other.
-> > Check the template modules `Test` to see how it's defined.
+> > Check the template module named `Test` to see how it's defined.
 
 ---
 
