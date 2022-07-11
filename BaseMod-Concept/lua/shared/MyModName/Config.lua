@@ -13,28 +13,23 @@ local Config = {
     --- if true, it will always be requested/overwritten by the server
     --- if false, it will only be local
     ClientModData = {
-        WorldData = true, -- request from server
-        PlayerData = false, -- local only
+        PriceList = true,           -- request from server
+        LocalPlayersData = false,   -- local only
     },
 
     --- Define Global ModData tables to create on the server
     ServerModData = {
-        "WorldData",
-        "PlayerData",
+        "PriceList",
     },
 
     --- Define custom events to add on the client
     ClientEvents = {
-        --- Triggered when the mod Global ModData is done initializing
-        --- [ isNewGame:boolean ]
-        "OnModDataInitialized",
+        "MyCustomClientEvent",
     },
 
     --- Define custom events to add on the server
     ServerEvents = {
-        --- Triggered when the mod Global ModData is done initializing
-        --- [ isNewGame:boolean ]
-        "OnModDataInitialized",
+        "MyCustomServerEvent",
     },
 
 };

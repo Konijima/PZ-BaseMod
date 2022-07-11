@@ -4,13 +4,21 @@ local Server = require 'MyModName/Server';
 --- Added events will be stored in this ArrayList
 local addedEvents = ArrayList.new();
 
---- Add the config server events
-for _, eventName in ipairs(Server.Config.ServerEvents) do
+--- Function that initialize the events found in the config
+local function internalInitEvent(eventName)
     if not addedEvents:contains(eventName) then
         LuaEventManager.AddEvent(Server.Config.ModName .. "Server" .. eventName);
         addedEvents:add(eventName);
         Server.Log("Created custom server event " .. eventName);
     end
+end
+
+--- Core event
+internalInitEvent("OnModDataInitialized");
+
+--- Add the config server events
+for _, eventName in ipairs(Server.Config.ServerEvents) do
+    internalInitEvent(eventName);
 end
 
 ---Add an event callback

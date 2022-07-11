@@ -4,13 +4,21 @@ local Client = require 'MyModName/Client';
 --- Added events will be stored in this ArrayList
 local addedEvents = ArrayList.new();
 
---- Add the config client events
-for _, eventName in ipairs(Client.Config.ClientEvents) do
+--- Function that initialize the events found in the config
+local function internalInitEvent(eventName)
     if not addedEvents:contains(eventName) then
         LuaEventManager.AddEvent(Client.Config.ModName .. "Client" .. eventName);
         addedEvents:add(eventName);
         Client.Log("Created custom client event " .. eventName);
     end
+end
+
+--- Core event
+internalInitEvent("OnModDataInitialized");
+
+--- Add the config client events
+for _, eventName in ipairs(Client.Config.ClientEvents) do
+    internalInitEvent(eventName);
 end
 
 ---Add an event callback
