@@ -8,10 +8,10 @@ BaseMod Concept can be used as an example or template to structure a Project Zom
 
 ## What does it do?
 - Offer a base to quick start a new project.
-- You define Global ModData from your config file.
-- It handles receiving of the Global ModData for you.
-- You define Custom Events from your config file.
-- Offer a clean & easy way to structure your project.
+- Quickly define Custom Events from your config file.
+- Quickly define global ModData and easily access it anywhere.
+- Handling of receiving Global ModData is already done for you.
+- Offer a clean & easy way to structure your project as it grow bigger.
 
 <br>
 
