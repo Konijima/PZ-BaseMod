@@ -202,9 +202,9 @@ The custom event `OnModDataInitialized` is an internal event you do not need to 
 On the client:
 ```lua
 local function onModDataInitialized()
-    Client.Log( Client.Data.LocalPlayer.TotalItemBought ) --- Table is ready
+    Client.Log( Client.Data.LocalPlayer ) --- Table is ready
 
-    Client.Log( Client.Data.PriceList.BaseballBat )       --- Is ready but not received yet
+    Client.Log( Client.Data.PriceList )       --- Is ready but not received yet
 end
 Client.AddEvent("OnModDataInitialized", onModDataInitialized);
 ```
@@ -212,7 +212,7 @@ Client.AddEvent("OnModDataInitialized", onModDataInitialized);
 On the server:
 ```lua
 local function onModDataInitialized()
-    Server.Log( Server.Data.PriceList.BaseballBat ) --- Table is ready
+    Server.Log( Server.Data.PriceList ) --- Table is ready
 end
 Server.AddEvent("OnModDataInitialized", onModDataInitialized);
 ```
