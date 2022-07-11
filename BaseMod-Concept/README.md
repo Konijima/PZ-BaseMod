@@ -38,7 +38,7 @@ Edit the mod config file at `lua/shared/MyModName/Config.lua`
 2) Change the `ModInfo` to fit your own info.
 3) Change `ClientModData` and `ServerModData` to suit your mod needs.
 4) Add custom events into the `ClientEvents` and `ServerEvents` tables.
->You can add any custom config **key:value** to the config object to access it into your mod.
+>*You can add any custom config **key:value** to the config object to access it into your mod.*
 
 <br>
 
@@ -65,13 +65,13 @@ Server.SendCommand("MyCommand", {})
 
 ## Receiving Commands
 
-Command handlers are functions defined into its own file. 
->This make it easier to reload a specific command for debugging.
+To make it easier to reload a specific command, each command handler is defined into its own file.
 
-Server command handlers are inside `client/MyModName/ServerCommands/`.  
-Client command handlers are inside `server/MyModName/ClientCommands/`.
+**Server command handlers** are inside `client/MyModName/ServerCommands/`.  
 
->Check template commands **Ping** & **Pong** to see how it works. 
+**Client command handlers** are inside `server/MyModName/ClientCommands/`.
+
+>*Check template commands **Ping** & **Pong** to see how it works.* 
 
 <br>
 
@@ -80,8 +80,8 @@ Client command handlers are inside `server/MyModName/ClientCommands/`.
 **A module is a table of functions that can be used inside command handlers and other modules.**
 
 This is where the main logic of your mod will be defined.
->I call theses `Module` because you can structure your mod into different parts and access each part from within an other.
-Check the template module named `Test` to see how it's defined.
+>I call theses `Module` because you can structure your mod into different parts and access each part from within an other.  
+>Check the template module named `Test` to see how it's defined.
 
 <br>
 
