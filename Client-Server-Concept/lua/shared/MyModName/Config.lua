@@ -6,32 +6,44 @@ local Config = {
 
     --- Define custom events to add on the client
     ClientEvents = {
-        --- triggered when the mod Global ModData is done initializing
-        "OnModDataInitialized",     -- [ isNewGame:boolean ]
 
-        --- 
-        "OnPlayerSpawned",          -- [ player:IsoPlayer, isNewCharacter:boolean ]
+        --- Triggered when the mod Global ModData is done initializing
+        --- [ isNewGame:boolean ]
+        "OnModDataInitialized",
 
-        --- 
-        "OnPlayerDied",             -- [ player:IsoPlayer ]
+        --- Triggered when a player has spawned and re-spawned
+        --- [ player:IsoPlayer, isNewCharacter:boolean ]
+        "OnPlayerSpawned",
+
+        --- Triggered when a player has died
+        --- [ player:IsoPlayer ]
+        "OnPlayerDied",
+
     },
 
     --- Define custom events to add on the server
     ServerEvents = {
-        --- triggered when the mod Global ModData is done initializing
-        "OnModDataInitialized",     -- [ isNewGame:boolean ]
 
-        --- 
-        "OnPlayerConnected",        -- [ player:IsoPlayer, isNewPlayer:boolean ]
+        --- Triggered when the mod Global ModData is done initializing
+        --- [ isNewGame:boolean ]
+        "OnModDataInitialized",
 
-        --- 
-        "OnPlayerDisconnected",     -- [ player:IsoPlayer ]
+        --- Triggered when a player has connected and exist in the world
+        --- [ player:IsoPlayer, isNewPlayer:boolean ]
+        "OnPlayerConnected",
 
-        --- 
-        "OnPlayerSpawned",          -- [ player:IsoPlayer, isNewCharacter:boolean ]
+        --- Triggered when a player has disconnected
+        --- [ player:IsoPlayer ]
+        "OnPlayerDisconnected",
 
-        --- 
-        "OnPlayerDied",             -- [ player:IsoPlayer ]
+        --- Triggered when a player has spawned and re-spawned
+        --- [ player:IsoPlayer, isNewCharacter:boolean ]
+        "OnPlayerSpawned",
+
+        --- Triggered when a player has died
+        --- [ player:IsoPlayer ]
+        "OnPlayerDied",
+
     },
 
 };
