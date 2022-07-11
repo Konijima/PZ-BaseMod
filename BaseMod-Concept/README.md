@@ -177,18 +177,43 @@ ClientModData = {
 
 >*To have a client and server Global ModData table synchronized it must have the exact same name.*
 
-## Access Global ModData
+## Easily access your mod Global ModData
 
 All loaded Global ModData will be accessible into the **Client.Data** & **Server.Data** object.
 
 ```lua
-Client.Data.LocalPlayer.Cash = 9999;
+Client.Data.LocalPlayer.TotalItemBought = 5;
+
 local baseballBatPrice = Client.Data.PriceList.BaseballBat
 ```
 ```lua
 local baseballBatPrice = Server.Data.PriceList.BaseballBat
 ```
 >*Never set the table itself, eg: `Client.Data.LocalPlayer = {}` or it will not point to the ModData reference anymore.*
+
+## Access Global ModData after it's initialized
+
+The custom event `OnModDataInitialized` is an internal event you do not need to add it to your config. It is triggered after the GlobalModData is initialized.
+
+On the client:
+```lua
+local function onModDataInitialized()
+    Client.Log( Client.Data.LocalPlayer.TotalItemBought ) --- Table is ready
+
+    Client.Log( Client.Data.PriceList.BaseballBat )       --- Is ready but not received yet
+end
+Client.AddEvent("OnModDataInitialized", onModDataInitialized);
+```
+
+On the server:
+```lua
+local function onModDataInitialized()
+    Server.Log( Server.Data.PriceList.BaseballBat ) --- Table is ready
+end
+Server.AddEvent("OnModDataInitialized", onModDataInitialized);
+```
+
+>*Global ModData that request data to the server will not have received the data in `OnModDataInitialized` yet.*
 
 <br>
 
