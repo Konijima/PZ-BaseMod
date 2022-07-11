@@ -52,14 +52,15 @@ Edit the mod config file at ```lua/shared/MyModName/Config.lua```
 
 ## Modules
 
-> Modules are static classes with functions to be in commands and other modules.
+> Modules are table of functions that can be used in your commands and other modules.
 > 
-> This is where the main logic of your mod will be defined. It's named `Module` cause you can structure your mod into different modules to manage different parts separately.
+> This is where the main logic of your mod will be defined. 
+> It's named a `Module` cause you can structure your mod into different parts and access each part from within an other.
 > > Check the template modules `Test` to see how it works.
 
 ## Custom Events
 
-> Define your mod client and server custom events in your config file.
+> Define your mod client & server custom events in your config file.
 > Then you can use `AddEvent`, `RemoveEvent` & `TriggerEvent` using the `Client` & `Server` object.
 
 > ## AddEvent
