@@ -22,6 +22,19 @@ Inside each of these directories, we have a directory named after your mod name 
 
 ---
 
+# **How to use**
+
+Edit the mod config file at ```lua/shared/MyModName/Config.lua```
+> 1) Change `ModName = "MyModName"`.
+> 2) Change the `ModInfo` to suit your own info.
+> 3) Change `ClientModData` and `ServerModData` to suit your mod needs.
+> 4) Add custom events into `ClientEvents` and `ServerEvents` when you need.
+> > And add any custom configs that you need access in your client and server scripts.
+
+
+
+---
+
 # **Reload Scripts**
 
 ### Reloading **client** & **shared** script on the client
