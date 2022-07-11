@@ -42,7 +42,7 @@ Edit the mod config file at `lua/shared/MyModName/Config.lua`
 2) Change the `ModInfo` with your own.
 3) Define the Global ModData needed for your mod.
 4) Add custom events into the `ClientEvents` and `ServerEvents` tables.
->*You can add any custom config **key:value** to the config object to access it into your mod.*
+>*If you need to, add new fields to the config object and access it using `Client.Config.MyField` and `Server.Config.MyField`.*
 
 <br>
 
