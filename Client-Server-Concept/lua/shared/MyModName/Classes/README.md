@@ -1,3 +1,0 @@
-# lua/shared/MyModName/Classes/
-
-

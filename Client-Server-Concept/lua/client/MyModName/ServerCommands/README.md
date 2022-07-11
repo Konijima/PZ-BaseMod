@@ -1,3 +1,0 @@
-# lua/client/MyModName/ServerCommands/
-
-
