@@ -16,6 +16,10 @@
 
 > Server **entry** script for our mod. 
 
+## ServerEvents.lua
+
+> Adds the Server Events defined into the config file.
+
 ## ServerModData.lua
 
 > Create and prepare the various Global ModData used by our mod. **(server-side)**
