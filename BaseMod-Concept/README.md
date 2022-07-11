@@ -33,12 +33,11 @@ Edit the mod config file at ```lua/shared/MyModName/Config.lua```
 
 ## Commands
 
-> *Command handlers are functions defined into their own file in the `Commands` directory.
-> This makes it easier to reload a specific command while debugging.*
+> Network communication between the client and server are done using commands. 
 
 > ## Sending Commands
 > 
-> Both `Client` & `Server` object have the method `SendCommand`.
+> Both `Client` & `Server` object have a method `SendCommand`.
 > 
 > To send a command from a client to the server, use ```Client.SendComand("MyCommand", {})```
 >
@@ -53,13 +52,15 @@ Edit the mod config file at ```lua/shared/MyModName/Config.lua```
 
 ## Modules
 
-> Modules are just static classes where you can add functions to be used across the mod. You can also bind to events and do anything you need in there.
+> Modules are static classes with functions to be in commands and other modules.
+> 
+> This is where the main logic of your mod will be defined. It's named `Module` cause you can structure your mod into different modules to manage different parts separately.
 > > Check the template modules `Test` to see how it works.
 
 ## Custom Events
 
-> Define your mod client custom events and server custom events in the config file.
-> Then you can AddEvent, RemoveEvent and TriggerEvent using the `Client` and `Server` object.
+> Define your mod client and server custom events in your config file.
+> Then you can use `AddEvent`, `RemoveEvent` & `TriggerEvent` using the `Client` & `Server` object.
 
 > ## AddEvent
 > 
