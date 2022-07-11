@@ -31,43 +31,58 @@ Edit the mod config file at ```lua/shared/MyModName/Config.lua```
 > 4) Add custom events into `ClientEvents` and `ServerEvents` when you need.
 > > You can add any custom config key:value to the config object to access it into your mod.
 
+---
+
 ## Commands
 
-> Network communication between the client and server are done using commands. 
+Network communication between the client and server are done using commands.
 
 > ## Sending Commands
 > 
-> Both `Client` & `Server` object have a method `SendCommand`.
+> Both **Client** & **Server** object have a method `SendCommand`.
 > 
-> To send a command from a client to the server, use ```Client.SendCommand("MyCommand", {})```
+> > ### To send a command from a client to the server:
+> > ```lua
+> > Client.SendCommand("MyCommand", {})
+> > ```
 >
-> To send a command from the server to a client, use ```Server.SendCommand("MyCommand", {}, targetPlayer)```
+> > ### To send a command from the server to a client:
+> > ```lua
+> > Server.SendCommand("MyCommand", {}, targetPlayer)
+> > ```
 >
-> To send a command from the server to all clients, use ```Server.SendCommand("MyCommand", {})```
+> > ### To send a command from the server to all clients:
+> > ```lua
+> > Server.SendCommand("MyCommand", {})
+> > ```
 
 > ## Receiving Commands
 > 
 > Command handlers are functions defined into their own file in a `Commands` directory. This make it easier to reload a specific command for debugging.
 > > Check the template commands `Ping & Pong` to see how it works. 
 
+---
+
 ## Modules
 
-> Modules are table of functions that can be used in your commands and other modules.
+> > Modules are table of functions that can be used in your commands and other modules.
 > 
 > This is where the main logic of your mod will be defined. 
 > It's named a `Module` cause you can structure your mod into different parts and access each part from within an other.
 > > Check the template modules `Test` to see how it works.
 
+---
+
 ## Custom Events
 
-> Define your mod client & server custom events in your config file.
-> Then you can use `AddEvent`, `RemoveEvent` & `TriggerEvent` using the `Client` & `Server` object.
+Define your mod client & server custom events in your config file.
+Then you can use `AddEvent, RemoveEvent, TriggerEvent` methods from the `Client` & `Server` object.
 
 > ## AddEvent
 > 
 > You can listen to a custom event and run a function everytime it is triggered.
+> Usage for `Client` & `Server` are the same.
 > 
-> >Usage on the `Client` and `Server` are the same.
 > ```lua
 > local function myCustomEvent(arg1 ,arg2, ...)
 >     Client.Log("My custom client event has been triggered!");
@@ -101,7 +116,10 @@ Edit the mod config file at ```lua/shared/MyModName/Config.lua```
 > Server.TriggerEvent("OnMyCustomServerEvent", "param1", "param2", "param3");
 > ```
 
-> > The custom event `OnModDataInitialized` triggers after your mod `Global ModData` has been initialized.
+> ### OnModDataInitialized
+> The custom event `OnModDataInitialized` will trigger after your mod `Global ModData` has been initialized.
+
+---
 
 ## Global ModData
 
