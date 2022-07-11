@@ -1,17 +1,27 @@
 -- Ensure client is loaded first
 local Client = require 'MyModName/Client';
 
+---Initialize Server Global ModData that we need to sync with the server
+---@param modDataName string
+local function initServerModDataTable(modDataName)
+    if Client.Data[modDataName] then return; end -- prevent multiple initialization
+    if isClient() and ModData.exists(modDataName) then ModData.remove(modDataName); end
+    Client.Data[modDataName] = ModData.getOrCreate(modDataName);
+    ModData.request(modDataName);
+end
+
+---Initialize local Global ModData that we need only on the client
+---@param modDataName string
+local function initLocalModDataTable(modDataName)
+    if Client.Data[modDataName] then return; end -- prevent multiple initialization
+    Client.Data[modDataName] = ModData.getOrCreate(modDataName);
+end
+
 --- Handle initialization of Global ModData on client
 local function initGlobalModData(isNewGame)
 
-    --- ServerData : Example Data that must be requested/received from the server
-    --- We delete it on the client (not singleplayer) and we request the latest from the server
-    if isClient() and ModData.exists("ServerData") then ModData.remove("ServerData"); end
-    Client.Data.ServerData = ModData.getOrCreate("ServerData");
-    ModData.request("ServerData");
-
-    --- ClientData : Example Data that is local to this client
-    Client.Data.ClientData = ModData.getOrCreate("ClientData");
+    initServerModDataTable("WorldData");
+    initLocalModDataTable("PlayerData");
     
 end
 Events.OnInitGlobalModData.Add(initGlobalModData);
