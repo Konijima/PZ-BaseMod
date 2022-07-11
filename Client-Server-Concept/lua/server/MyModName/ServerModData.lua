@@ -1,4 +1,4 @@
--- Ensure server is loaded first
+--- Load Server
 local Server = require 'MyModName/Server';
 
 ---Initialize Global ModData that we need on the server
