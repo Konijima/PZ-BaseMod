@@ -24,6 +24,6 @@
 
 > Prepare our mod custom events on the client, defined in our Config.
 
-## ServerModData.lua
+## ClientModData.lua
 
 > Load/Create/Request the Global ModData on the client, defined in our Config.
