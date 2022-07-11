@@ -1,22 +1,22 @@
 --- Load Client
 local Client = require 'MyModName/Client';
 
----@class TestClientModule
-local TestClientModule = {};
+---@class ClientModuleTest
+local ClientModuleTest = {};
 
 ---Send Ping to the server
-function TestClientModule.SendPing()
+function ClientModuleTest.SendPing()
     Client.SendCommand("Ping");
 end
 
 ---Queue TemplateAction to a local player
 ---@param player IsoPlayer
-function TestClientModule.QueueTemplateAction(player)
+function ClientModuleTest.QueueTemplateAction(player)
     if not instanceof(player, "IsoPlayer") or player:isDead() or not player:isLocalPlayer() then return; end
 
-    local timedAction = Client.TimedActions.TemplateAction:new(player);
+    local timedAction = Client.TimedActions.DoSomething:new(player);
     ISTimedActionQueue.add(timedAction);
 end
 
---- Set the module
-Server.Modules.Test = TestClientModule;
+--- Add the module to the client Modules object
+Client.Modules.Test = ClientModuleTest;
