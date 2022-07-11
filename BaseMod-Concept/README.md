@@ -199,7 +199,7 @@ local baseballBatPrice = Server.Data.PriceList.BaseballBat
 
 The custom event `OnModDataInitialized` is an internal event you do not need to add it to your config. It is triggered after the GlobalModData is initialized.
 
-On the client:
+**OnModDataInitialized on the client:**
 ```lua
 local function onModDataInitialized()
     Client.Log( Client.Data.LocalPlayer ) --- Table is ready
@@ -208,16 +208,15 @@ local function onModDataInitialized()
 end
 Client.AddEvent("OnModDataInitialized", onModDataInitialized);
 ```
+>*Global ModData that request data to the server will not have received the data in `OnModDataInitialized` yet.*
 
-On the server:
+**OnModDataInitialized on the server:**
 ```lua
 local function onModDataInitialized()
     Server.Log( Server.Data.PriceList ) --- Table is ready
 end
 Server.AddEvent("OnModDataInitialized", onModDataInitialized);
 ```
-
->*Global ModData that request data to the server will not have received the data in `OnModDataInitialized` yet.*
 
 <br>
 
