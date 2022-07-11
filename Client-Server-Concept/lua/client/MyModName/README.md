@@ -12,7 +12,7 @@
 
 > `TimedActions/` directory will store all the TimedActions class for this mod.
 
-## ServerCommands/
+## UI/
 
 > `UI/` directory will store all the UI components for this mod.
 
