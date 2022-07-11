@@ -31,6 +31,29 @@ Edit the mod config file at ```lua/shared/MyModName/Config.lua```
 > 4) Add custom events into `ClientEvents` and `ServerEvents` when you need.
 > > And add any custom configs that you need access in your client and server scripts.
 
+## Commands
+
+> *Command handlers are functions defined into their own file in the `Commands` directory.
+> This makes it easier to reload a specific command while debugging.*
+
+> ### Sending Commands
+> Both `Client` & `Server` object have the method `SendCommand`.
+> 
+> To send a command from client to server, use ```Client.SendComand("MyCommand", {})```
+> 
+> To send a command from server to client, use ```Server.SendComand("MyCommand", {}, targetPlayer)```
+
+> ### Receiving Commands
+> 
+> 
+
+## Modules
+
+
+## Custom Events
+
+
+## Global ModData
 
 
 ---
