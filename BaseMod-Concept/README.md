@@ -100,7 +100,7 @@ ServerEvents = {
     "MyCustomServerEvent",
 },
 ```
->*All custom events are automatically prefixed with your ModName so there is no conflict between mods.*
+>*All custom events are internally prefixed with your ModName so there is no conflict between mods.*
 
 <br>
 
@@ -176,6 +176,19 @@ ClientModData = {
 ```
 
 >*To have a client and server Global ModData table synchronized it must have the exact same name.*
+
+## Access Global ModData
+
+All loaded Global ModData will be accessible into the **Client.Data** & **Server.Data** object.
+
+```lua
+Client.Data.LocalPlayer.Cash = 9999;
+local baseballBatPrice = Client.Data.PriceList.BaseballBat
+```
+```lua
+local baseballBatPrice = Server.Data.PriceList.BaseballBat
+```
+>*Never set the table itself, eg: `Client.Data.LocalPlayer = {}` or it will not point to the ModData reference anymore.*
 
 <br>
 
