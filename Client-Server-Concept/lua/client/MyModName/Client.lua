@@ -15,6 +15,12 @@ local Client = {
     UI = {},            -- UI components stored in this
 };
 
+---Define global variable for debugging
+---Can access the object in the console window
+if isDebugEnabled() then
+    MyModName = Client;
+end
+
 ---Log data prefixed with the mod name
 ---@param str string
 function Client.Log(str)
