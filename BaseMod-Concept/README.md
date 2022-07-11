@@ -4,10 +4,9 @@
 
 > ## What does it do?
 > - Define Global ModData from a config file.
-> - Define custom events from a config file.
+> - Define Custom Events from a config file.
 > - Send commands between client and server.
-> - Structured project using require.
-> - Make mods work in **Singleplayer**, **Host** & **Dedicated Server** without extra work.
+> - Structure project using `Modules`.
 
 ---
 
