@@ -64,50 +64,49 @@ Network communication between the client and server are done using commands.
 
 ## Modules
 
-> > Modules are table of functions that can be used in your commands and other modules.
+> **A module is a table of functions that can be used inside command handlers and other modules.**
 > 
-> This is where the main logic of your mod will be defined. 
-> It's named a `Module` cause you can structure your mod into different parts and access each part from within an other.
-> > Check the template modules `Test` to see how it works.
+> This is where the main logic of your mod will be defined.
+> I call theses `Module` because you can structure your mod into different parts and access each part from within an other.
+> > Check the template modules `Test` to see how it's defined.
 
 ---
 
 ## Custom Events
 
-Define your mod client & server custom events in your config file.
-Then you can use `AddEvent, RemoveEvent, TriggerEvent` methods from the `Client` & `Server` object.
+Define your mod client & server Custom Events in your config file.  
+Both **Client** & **Server** object have the methods `AddEvent, RemoveEvent, TriggerEvent`.
 
 > ## AddEvent
 > 
-> You can listen to a custom event and run a function everytime it is triggered.
-> Usage for `Client` & `Server` are the same.
+> You can listen to a Custom Event and execute a callback everytime it's triggered.
 > 
 > ```lua
-> local function myCustomEvent(arg1 ,arg2, ...)
+> local function myCustomEventCallback(arg1 ,arg2, ...)
 >     Client.Log("My custom client event has been triggered!");
 > end
-> Client.AddEvent("OnMyCustomClientEvent", myCustomClientEvent);
+> Client.AddEvent("OnMyCustomClientEvent", myCustomEventCallback);
 > ```
 > ```lua
-> local function myCustomEvent(arg1 ,arg2, ...)
+> local function myCustomEventCallback(arg1 ,arg2, ...)
 >     Server.Log("My custom server event has been triggered!");
 > end
-> Server.AddEvent("OnMyCustomServerEvent", myCustomServerEvent);
+> Server.AddEvent("OnMyCustomServerEvent", myCustomEventCallback);
 > ```
 
 > ## RemoveEvent
 > 
-> You can remove a callback so that it stop listening when that event triggers again.
+> You can remove a callback so that it stop executing when then event triggers again.
 > ```lua
-> Client.RemoveEvent("OnMyCustomClientEvent", myCustomClientEvent);
+> Client.RemoveEvent("OnMyCustomClientEvent", myCustomEventCallback);
 > ```
 > ```lua
-> Server.RemoveEvent("OnMyCustomServerEvent", myCustomServerEvent);
+> Server.RemoveEvent("OnMyCustomServerEvent", myCustomEventCallback);
 > ```
 
 > ## TriggerEvent
 > 
-> You can trigger and pass any parameter to your custom events.
+> You can trigger and pass any parameter to your custom events when you need it.
 > ```lua
 > Client.TriggerEvent("OnMyCustomClientEvent", "param1", "param2");
 > ```
