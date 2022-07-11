@@ -7,7 +7,7 @@ local Config = {
         Author = "Konijima",
         Discord = "Konijima#9279",
         --- Add custom info to print in the console log
-    };
+    },
 
     --- Define Global ModData tables to create on the client
     --- if true, it will always be requested/overwritten by the server
