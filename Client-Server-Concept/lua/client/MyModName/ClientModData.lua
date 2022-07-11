@@ -22,6 +22,8 @@ local function initGlobalModData(isNewGame)
 
     initServerModDataTable("WorldData");
     initLocalModDataTable("PlayerData");
+
+    Client.TriggerEvent("OnModDataInitialized", isNewGame);
     
 end
 Events.OnInitGlobalModData.Add(initGlobalModData);
