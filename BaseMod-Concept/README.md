@@ -167,15 +167,14 @@ ServerModData = {
     "PriceList", -- server table names are just a string
 },
 ```
+>*To have a client and server GlobalModData table synchronized it must have the same name.*
 
 Some Global ModData table don't need to be networked, they are only relevant to the server or to the client itself.
 ```lua
-ClientModData = {
-    LocalPlayer = false, -- false mean we do not request the server ever and is only available to this client
+        ClientModData = {
+LocalPlayer = false, -- false mean we do not request the server ever and is only available to this client
 },
 ```
-
->*To have a client and server Global ModData table synchronized it must have the exact same name.*
 
 <br>
 
