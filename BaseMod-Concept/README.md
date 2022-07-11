@@ -39,11 +39,11 @@ Edit the mod config file at ```lua/shared/MyModName/Config.lua```
 > 
 > Both `Client` & `Server` object have a method `SendCommand`.
 > 
-> To send a command from a client to the server, use ```Client.SendComand("MyCommand", {})```
+> To send a command from a client to the server, use ```Client.SendCommand("MyCommand", {})```
 >
-> To send a command from the server to a client, use ```Server.SendComand("MyCommand", {}, targetPlayer)```
+> To send a command from the server to a client, use ```Server.SendCommand("MyCommand", {}, targetPlayer)```
 >
-> To send a command from the server to all clients, use ```Server.SendComand("MyCommand", {})```
+> To send a command from the server to all clients, use ```Server.SendCommand("MyCommand", {})```
 
 > ## Receiving Commands
 > 
