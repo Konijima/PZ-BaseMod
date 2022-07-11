@@ -37,6 +37,7 @@ function ModServer.SendCommand(command, data, _player)
 end
 
 ---Transmit GlobalModData table to all clients
+---Recommended to do this only if the table is heavily changed only, otherwise use commands to synchronize small changes.
 ---@param modDataName string
 function ModServer.TransmitModData(modDataName)
     local name = ModServer.Config.ModName .. "." .. modDataName;
