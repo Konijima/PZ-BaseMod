@@ -6,11 +6,11 @@ local Utils = require "MyModName/Utils";
 
 ---@class Server
 local Server = {
-    Config = Config,
-    Utils = Utils,
-    Data = {},      -- Global ModData will be stored in this
-    Modules = {},   -- Server modules will be stored in this
-    Commands = {},  -- Client command handlers will be stored in this
+    Config = Config,    -- Reference to the mod Config class
+    Utils = Utils,      -- Reference to the mod Utils class
+    Data = {},          -- Global ModData will be stored in this
+    Modules = {},       -- Server modules will be stored in this
+    Commands = {},      -- Client command handlers will be stored in this
 };
 
 ---Log data prefixed with the mod name
