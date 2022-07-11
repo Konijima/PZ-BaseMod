@@ -5,8 +5,9 @@ local Server = require 'MyModName/Server';
 local TestServerModule = {};
 
 ---Send Pong to the server
-function TestServerModule.SendPong()
-    Server.SendCommand("Pong");
+---@param _player IsoPlayer
+function TestServerModule.SendPong(_player)
+    Server.SendCommand("Pong", {}, _player);
 end
 
 --- Set the module
