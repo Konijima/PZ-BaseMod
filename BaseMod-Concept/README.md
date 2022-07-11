@@ -160,18 +160,18 @@ For example if you wanted to have a **Price List** synchronized between everybod
 When the player connect it would request the latest snapshot of that table and using commands you would keep it up-to-date.
 ```lua
 ClientModData = {
-    PriceList = true,
+    PriceList = true, -- true mean we request to the server on connect
 },
 
 ServerModData = {
-    "PriceList",
+    "PriceList", -- server table names are just a string
 },
 ```
 
 Some Global ModData table don't need to be networked, they are only relevant to the server or to the client itself.
 ```lua
 ClientModData = {
-    LocalPlayer = false, -- storing info about local player, set to false 
+    LocalPlayer = false, -- false mean we do not request the server ever and is only available to this client
 },
 ```
 
