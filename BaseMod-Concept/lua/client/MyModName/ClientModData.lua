@@ -21,6 +21,7 @@ end
 local function initGlobalModData(isNewGame)
 
     for modDataName, isSync in pairs(Client.Config.ClientModData) do
+        -- Global ModData tables are prefixed with the ModName
         local name = Client.Config.ModName .. "." .. modDataName;
         if isSync then
             initServerModDataTable(name);
@@ -36,6 +37,7 @@ Events.OnInitGlobalModData.Add(initGlobalModData);
 
 --- Handle receiving of Global ModData on client
 local function receiveGlobalModData(modDataName, data)
+    -- Global ModData tables are prefixed with the ModName
     local name = Client.Config.ModName .. "." .. modDataName;
     if Client.Data[name] and type(data) == "table" then
         if #data > 0 then

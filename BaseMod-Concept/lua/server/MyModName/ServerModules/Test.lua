@@ -10,5 +10,5 @@ function ServerModuleTest.SendPong(_player)
     Server.SendCommand("Pong", {}, _player);
 end
 
---- Add the module to the server object
+--- Add the module to the server Modules object
 Server.Modules.Test = ServerModuleTest;

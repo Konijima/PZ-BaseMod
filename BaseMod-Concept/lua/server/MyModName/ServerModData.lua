@@ -12,6 +12,7 @@ end
 local function initGlobalModData(isNewGame)
 
     for _, modDataName in ipairs(Server.Config.ServerModData) do
+        -- Global ModData tables are prefixed with the ModName
         local name = Server.Config.ModName .. "." .. modDataName;
         initModDataTable(name);
     end
