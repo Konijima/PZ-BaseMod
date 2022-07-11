@@ -26,10 +26,10 @@ Inside each of these directories, we have a directory named after your mod name 
 
 Edit the mod config file at ```lua/shared/MyModName/Config.lua```
 > 1) Change `ModName = "MyModName"`.
-> 2) Change the `ModInfo` to suit your own info.
+> 2) Change the `ModInfo` to fit your own info.
 > 3) Change `ClientModData` and `ServerModData` to suit your mod needs.
 > 4) Add custom events into `ClientEvents` and `ServerEvents` when you need.
-> > And add any custom configs that you need access in your client and server scripts.
+> > You can add any custom config key:value to the config object to access it into your mod.
 
 ## Commands
 
@@ -101,7 +101,7 @@ Edit the mod config file at ```lua/shared/MyModName/Config.lua```
 > Server.TriggerEvent("OnMyCustomServerEvent", "param1", "param2", "param3");
 > ```
 
-> > The custom event`OnModDataInitialized` triggers after your mod `Global ModData` has been initialized.
+> > The custom event `OnModDataInitialized` triggers after your mod `Global ModData` has been initialized.
 
 ## Global ModData
 
