@@ -11,12 +11,12 @@
 ---
 
 # **Directory Structure**
-Your `lua` directory can contain 3 subdirectories, each of them is optional depending your needs.
+The `lua` directory contain 3 subdirectories, each of them is optional dependently of your needs.
 > - **client** | lua script loaded on client only.
 > - **server** | lua script loaded on server only.
 > - **shared** | lua script loaded on both client & server.
 
-Inside each of these directories, we have a directory named after your mod name in which we have all scripts for the mod.  
+Inside each of these directories, we have a directory with the same name as the mod.  
 >*This will prevent script conflict/overwritting with other mods and make it easier to reload script using command or debug interface (F11).*
 
 ---
@@ -27,8 +27,8 @@ Edit the mod config file at ```lua/shared/MyModName/Config.lua```
 > 1) Change `ModName = "MyModName"`.
 > 2) Change the `ModInfo` to fit your own info.
 > 3) Change `ClientModData` and `ServerModData` to suit your mod needs.
-> 4) Add custom events into `ClientEvents` and `ServerEvents` when you need.
-> > You can add any custom config key:value to the config object to access it into your mod.
+> 4) Add custom events into the `ClientEvents` and `ServerEvents` tables.
+> > You can add any custom config **key:value** to the config object to access it into your mod.
 
 ---
 
