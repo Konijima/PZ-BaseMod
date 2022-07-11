@@ -1,14 +1,16 @@
---- Storing utility functions that can be used by both client and server scripts.
-MyModNameUtils = {};
+--- Set utility functions used by the mod
+local Utils = {};
 
-function MyModNameUtils.FileExists(filename)
+function Utils.FileExists(filename)
     
 end
 
-function MyModNameUtils.WriteFile(filename, data)
+function Utils.WriteFile(filename, data)
     
 end
 
-function MyModNameUtils.ReadFile(filename, data)
+function Utils.ReadFile(filename, data)
     
 end
+
+return Utils;

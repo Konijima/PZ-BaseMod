@@ -1,9 +1,11 @@
---- Storing configuration data used by both client and server scripts.
-MyModNameConfig = {
+--- Define configs used by the mod
+local Config = {
 
     ModName = "MyModName",
     ModVersion = "1.0.0",
 
 };
 
-print("Initializing " .. MyModNameConfig.ModName .. " version " .. MyModNameConfig.ModVersion);
+print("Initializing " .. Config.ModName .. " version " .. Config.ModVersion);
+
+return Config;
