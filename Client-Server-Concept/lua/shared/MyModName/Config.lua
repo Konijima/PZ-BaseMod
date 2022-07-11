@@ -6,6 +6,7 @@ local Config = {
     ModInfo = {
         Author = "Konijima",
         Discord = "Konijima#9279",
+        --- Add custom info to print in the console log
     };
 
     --- Define Global ModData tables to create on the client
@@ -41,7 +42,7 @@ local Config = {
 print("--------------------------------------------------------------------")
 print("Initializing " .. Config.ModName .. " version " .. Config.ModVersion);
 for k, v in pairs(Config.ModInfo) do
-    print(k .. ": " .. v);
+    print(k .. ": " .. v); --- print each mod info to the console log
 end
 print("--------------------------------------------------------------------")
 
