@@ -125,7 +125,7 @@ Server.AddEvent("OnMyCustomServerEvent", myCustomEventCallback);
 
 ## RemoveEvent
 
-Remove a callback from a custom event so that it is not longer executed when triggered.
+Remove a callback from a custom event so that it is no longer executed.
 
 ```lua
 Client.RemoveEvent("OnMyCustomClientEvent", myCustomEventCallback);
@@ -153,7 +153,29 @@ Server.TriggerEvent("OnMyCustomServerEvent", "param1", "param2", "param3", "para
 
 # Global ModData
 
-Info coming soon
+**Global ModData can be useful to store information into the World.**  
+Both client and server can have their own Global ModData but clients can request that ModData to the server to get the latest version of it.
+
+For example if you wanted to have a **Price List** synchronized between everybody you would create the same table on both client and server.
+When the player connect it would request the latest snapshot of that table and using commands you would keep it up-to-date.
+```lua
+ClientModData = {
+    PriceList = true,
+},
+
+ServerModData = {
+    "PriceList",
+},
+```
+
+Some Global ModData table don't need to be networked, they are only relevant to the server or to the client itself.
+```lua
+ClientModData = {
+    LocalPlayer = false, -- storing info about local player, set to false 
+},
+```
+
+>*To have a client and server Global ModData table synchronized it must have the exact same name.*
 
 <br>
 
