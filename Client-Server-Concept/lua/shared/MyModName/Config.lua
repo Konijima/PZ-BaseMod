@@ -1,4 +1,4 @@
---- Define configs used by the mod
+---@class Config
 local Config = {
 
     ModName = "MyModName",
