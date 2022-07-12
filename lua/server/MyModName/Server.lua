@@ -45,13 +45,13 @@ function ModServer.TransmitModData(modDataName)
 end
 
 --- Handle received client commands
-local function receiveServerCommand(module, command, player, args)
+local function receiveClientCommand(module, command, player, args)
     if module ~= ModServer.Config.ModName then return; end
 
-    if type(ModServer.Commands[command]) == "function" then
+    if ModServer.Commands[command] then
         ModServer.Commands[command](player, args);
     end
 end
-Events.OnServerCommand.Add(receiveServerCommand);
+Events.OnClientCommand.Add(receiveClientCommand);
 
 return ModServer;

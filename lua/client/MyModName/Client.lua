@@ -41,7 +41,7 @@ end
 local function receiveServerCommand(module, command, args)
     if module ~= ModClient.Config.ModName then return; end
 
-    if type(ModClient.Commands[command]) == "function" then
+    if ModClient.Commands[command] then
         ModClient.Commands[command](args);
     end
 end
