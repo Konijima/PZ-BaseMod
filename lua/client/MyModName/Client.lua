@@ -18,7 +18,7 @@ local ModClient = {
 ---Define global variable for debugging
 ---Can access the object in the console window
 if isDebugEnabled() then
-    MyModName = ModClient;
+    _G[ModClient.Config.ModName] = ModClient;
 end
 
 ---Log data prefixed with the mod name
