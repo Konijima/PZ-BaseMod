@@ -13,23 +13,23 @@ local Config = {
     --- if true, it will always be requested/overwritten by the server
     --- if false, it will only be local
     ClientModData = {
-        PriceList = true,           -- request from server
-        LocalPlayersData = false,   -- local only
+        exampleSync = true,     -- request from server
+        exampleLocal = false,   -- local only
     },
 
     --- Define Global ModData tables to create on the server
     ServerModData = {
-        "PriceList",
+        "exampleSync",
     },
 
     --- Define custom events to add on the client
     ClientEvents = {
-        "MyCustomClientEvent",
+        "OnCustomEvent",
     },
 
     --- Define custom events to add on the server
     ServerEvents = {
-        "MyCustomServerEvent",
+        "OnCustomEvent",
     },
 
 };
