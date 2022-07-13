@@ -27,7 +27,9 @@ function ModServer.SendCommand(command, data, _player)
     if not data then data = {}; end 
     if type(data) ~= "table" then error("Invalid 'data' parameter type, can only send 'nil' or 'table' to client(s)."); end
 
-    if instanceof(_player, "IsoPlayer") then
+    if ModServer.Utils.IsSinglePlayer() then
+        triggerEvent("OnServerCommand", ModServer.Config.ModName, command, data);
+    elseif instanceof(_player, "IsoPlayer") then
         sendServerCommand(_player, ModServer.Config.ModName, command, data);
     elseif _player == nil then
         sendServerCommand(ModServer.Config.ModName, command, data);
